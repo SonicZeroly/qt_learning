@@ -69,6 +69,7 @@ void Widget::PrintText(const QString& text){
 /**
  * @brief [槽函数]作为源端发送信号
  * @note  比较有意思的是，这里 button_clicked() 是槽，但是里面调用的是信号
+ *        这里看似可以用“信号关联信号”，但是两信号的声明格式不同
  */
 void Widget::button_clicked(){
     emit SendMsg(tr("This is a message"));   // SendMsg是信号，也就是放在SIGNAL()里面的，只有声明没有函数主体，传入的参数也是通过connect的写法传到槽函数
